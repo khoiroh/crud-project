@@ -1,0 +1,5 @@
+.foot{
+    display: flex;
+    margin-left: 40%;
+    gap: 15px;
+}

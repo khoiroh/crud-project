@@ -1,0 +1,23 @@
+.navbar{
+    background-color: sandybrown;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.image{
+    width: 50%;
+}
+.flex-wrap{
+    justify-content: center;
+}
+thead{
+    background-color: darkgray;
+    text-align: center;
+}
+b{
+    font-family: cursive;
+}
+@media only screen and (max-width: 600px) {
+    .navbar{
+        background-color: palevioletred;
+    }
+  }

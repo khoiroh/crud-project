@@ -1,0 +1,40 @@
+.nemu{
+    text-align: center;
+    color: yellowgreen;
+    font-family: 'Courier New', Courier, monospace;
+}
+.flex-wrap{
+    justify-content: center;
+}
+.carousel-inner{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.nem{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;  
+    background-color: goldenrod;
+    border: 5px solid sandybrown;   
+    border-radius: 30px;   
+    /* width: 400px;
+    margin-left: 35%;  */
+}
+.nem:hover{
+    color: red;
+}
+.card-title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card-title:hover{
+    color: seagreen;
+}
+
+/* .carousel{
+    height: 600px;
+} */
+@media only screen and (max-width: 600px) {
+   .carousel{
+    height: 400px;
+   }
+  }
+  
