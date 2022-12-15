@@ -79,6 +79,9 @@ function Login() {
 
         <span>Masuk Sebagai</span>
         <a href="/admin"> <i> <b>Admin</b></i></a>
+        <br />
+        <span>Jika Belum Memiliki Akun, Masuk sebagai </span>
+        <a href="/register"> <i> <b>Register</b></i></a>
       </Form>
     </div>
   );

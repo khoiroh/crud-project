@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Form, InputGroup } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
-import "../style/login.css"
+import "../style/login.css";
 
 function LoginAdmin() {
   const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@ function LoginAdmin() {
 
   const login = async (e) => {
     e.preventDefault();
-    axios.get("  http://localhost:3000/users/").then(({ data }) => {
+    axios.get(" http://localhost:3000/admins/").then(({ data }) => {
       const user = data.find(
         (x) => x.username === username && x.password === password
       );
@@ -27,9 +27,8 @@ function LoginAdmin() {
         localStorage.setItem("id", user.id);
         localStorage.setItem("username", user.username);
         history.push("/homeAdmin");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1500);
+
+        window.location.reload();
       } else {
         Swal.fire({
           icon: "error",
@@ -77,9 +76,15 @@ function LoginAdmin() {
         </button>
         <br />
         <br />
-        
+
         <span>Masuk Sebagai</span>
-        <a href="/"> <i> <b>User</b></i></a>
+        <a href="/">
+          {" "}
+          <i>
+            {" "}
+            <b>User</b>
+          </i>
+        </a>
       </Form>
     </div>
   );

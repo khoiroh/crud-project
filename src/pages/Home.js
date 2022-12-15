@@ -1,8 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 import "../style/home.css";
 
 export default function Home() {
+  const history = useHistory();
+
+  const addToCart = async (daftar) => {
+    await axios .post("http://localhost:3000/cart/", daftar)
+    Swal.fire({
+      icon: "success",
+        title: "Berhasil di masukkan ke cart",
+        timer: 5000,
+        buttons: false,
+    })
+    .then(() => {
+      window.location.reload();
+      history.push("/cart");
+    })
+    .catch((error) => {
+      alert("Terjadinya kesalahan " + error);
+    })
+  }
   const [menu, setMenu] = useState([]);
 
   const getAll = () => {
@@ -19,7 +39,7 @@ export default function Home() {
     getAll();
   }, []);
   return (
-    <div>
+    <div className="hom">
       <div
         id="carouselExampleControls"
         className="carousel slide"
@@ -28,12 +48,11 @@ export default function Home() {
       >
         {" "}
         <div className="nemu">
-          <h1>
+          <h1 className="B">
             <b>Welcome to my shop</b>
           </h1>{" "}
           <hr />
-          <h5><b>Ayo Mampir nang Warung ku</b></h5>
-          <h5><b>Nikmati Berbagai Promo <u>Khusus hari ini</u> Gagegoo !!!</b></h5>
+          
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -88,6 +107,7 @@ export default function Home() {
       </div>
       <br />
 
+<div className="irr">
       <h2 class="nem">Daftar Menu</h2>
       <div
         style={{ padding: 20, display: "flex", gap: 50 }}
@@ -113,8 +133,8 @@ export default function Home() {
               <p class="card-text">{daftar.deskripsi}</p>
               <h6>Rp.{daftar.harga}</h6>
               {localStorage.getItem("id") !== null ? (
-                <a href="#" class="btn btn-danger">
-                  Buy
+                <a onClick={() => addToCart(daftar)} class="btn btn-danger">
+                  구입
                 </a>
               ) : (
                 <></>
@@ -122,7 +142,7 @@ export default function Home() {
             </div>
           </div>
         ))}
-      </div>
+      </div></div>
     </div>
   );
 }

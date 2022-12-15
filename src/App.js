@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import HomeAdmin from "./pages/HomeAdmin";
 import Login from "./pages/Login";
 import LoginAdmin from "./pages/LoginAdmin";
+import Register from "./pages/Register";
 
 const App = () => {
   return (
@@ -18,15 +19,16 @@ const App = () => {
             <Route path="/" component={Login} exact />
             <Route path="/admin" component={LoginAdmin} exact />
             <Route path="/edit/:id" component={Edit} exact/>
+            <Route path="/register" component={Register} exact/>
+            <Route path="/cart" component={Cart} exact />
             <div>
               <NavigationBar />
               <Route path="/home" component={Home} exact />
               <Route path="/homeAdmin" component={HomeAdmin} exact />
-              <Route path="/cart" component={Cart} exact />
+              <Footer/>
             </div>
           </Switch>
         </main>
-        <Footer/>
       </BrowserRouter>
     </>
   );

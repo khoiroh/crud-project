@@ -1,5 +1,28 @@
 .foot{
     display: flex;
-    margin-left: 40%;
-    gap: 15px;
+    margin-left: 45%;
+    gap: 20px;
 }
+.fotter{
+    color: orange;
+    background-color: black;
+}
+/* b:hover{
+    color: red;
+} */
+.copy{
+    color: black;
+    text-align: center;
+    background-color: orange;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.text{
+    text-align: center;
+    padding: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .foot{
+        margin-left: 35%;
+    }
+   }
+ 

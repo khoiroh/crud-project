@@ -47,7 +47,7 @@ export default function NavigationBar() {
     <div>
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="NN navbar-brand" href="#">
             <b>Warung ku</b>
             {/* <img className="image" src={image} alt="" /> */}
           </a>
@@ -78,7 +78,6 @@ export default function NavigationBar() {
               ) : (
                 <></>
               )}
-             
 
               {localStorage.getItem("username") !== null ? (
                 <>
@@ -108,7 +107,7 @@ export default function NavigationBar() {
                     Login
                   </a>
                 </li>
-              )}
+              )} 
             </ul>
           </div>
         </div>
